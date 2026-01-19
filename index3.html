@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học sáng tạo – Sống tử tế | Trường THPT Modern School</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary-orange: #FF6600;
+            --secondary-orange: #FF8533;
+            --pure-white: #FFFFFF;
+            --soft-gray: #F8F9FA;
+            --dark-blue: #2D3436;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--pure-white);
+            color: var(--dark-blue);
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background: var(--pure-white);
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            letter-spacing: -1px;
+        }
+
+        .slogan {
+            font-size: 0.85rem;
+            color: #636e72;
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* HERO BANNER */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1523050853064-dbad35009711?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            padding: 12px 30px;
+            background: var(--primary-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .btn-cta:hover {
+            background: var(--secondary-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 80px 10%;
+        }
+
+        h3.section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--primary-orange);
+        }
+
+        /* INTRODUCTION */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px var(--soft-gray);
+        }
+
+        /* CLUBS SECTION */
+        #clubs {
+            background-color: var(--soft-gray);
+        }
+
+        .club-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .club-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .club-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .club-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* CONTACT */
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .contact-info strong {
+            color: var(--primary-orange);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .intro-grid { grid-template-columns: 1fr; }
+            .hero-content h2 { font-size: 2.2rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo">MODERN SCHOOL</div>
+            <div class="slogan">Học sáng tạo – Sống tử tế</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#clubs">Câu lạc bộ</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Kiến tạo tương lai từ hôm nay</h2>
+            <p style="margin-bottom: 30px; font-size: 1.2rem;">Môi trường học tập chuẩn quốc tế dành cho thế hệ Gen Z</p>
+            <a href="#about" class="btn-cta">Khám phá ngay</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h3 class="section-title">Về Chúng Tôi</h3>
+        <div class="intro-grid">
+            <div>
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Học sinh" class="intro-img">
+            </div>
+            <div>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Trường <strong>Modern School</strong> không chỉ là nơi truyền thụ kiến thức, mà còn là không gian để các bạn học sinh tự do sáng tạo. 
+                    <br><br>
+                    Với triết lý <em>"Học sáng tạo – Sống tử tế"</em>, chúng tôi tập trung phát triển tư duy phản biện và lòng trắc ẩn, giúp các em trở thành những công dân toàn cầu ưu tú.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="clubs">
+        <h3 class="section-title">Hệ thống Câu lạc bộ</h3>
+        <div class="club-container">
+            <div class="club-card">
+                <div class="club-icon">🎨</div>
+                <h4>CLB Nghệ thuật</h4>
+                <p>Nơi hội tụ của những tâm hồn bay bổng, từ hội họa đến thiết kế đồ họa.</p>
+            </div>
+            <div class="club-card">
+                <div class="club-icon">⚽</div>
+                <h4>CLB Thể thao</h4>
+                <p>Rèn luyện thể chất với bóng đá, bóng rổ và các hoạt động dã ngoại.</p>
+            </div>
+            <div class="club-card">
+                <div class="club-icon">💻</div>
+                <h4>CLB Công nghệ</h4>
+                <p>Khám phá thế giới lập trình, robotics và trí tuệ nhân tạo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3 class="section-title">Liên hệ</h3>
+        <div class="contact-info">
+            <p>📍 <strong>Địa chỉ:</strong> Khu đô thị Sáng Tạo, Quận 1, TP. Hồ Chí Minh</p>
+            <p>📞 <strong>Hotline:</strong> 1900 1234 - 028 3344 5566</p>
+            <p>✉️ <strong>Email:</strong> info@modernschool.edu.vn</p>
+            <div style="margin-top: 20px;">
+                <a href="#" class="btn-cta">Gửi tin nhắn cho chúng tôi</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Modern School. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Thiết kế bởi UX/UI Expert</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trường THPT - Học sáng tạo, Sống tử tế</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff7e29 0%, #ff9f5a 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(255, 126, 41, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: #ff7e29;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .slogan {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 126, 41, 0.9) 0%, rgba(255, 159, 90, 0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f8f9fa" width="1200" height="600"/><circle cx="200" cy="150" r="80" fill="%23ffebe0" opacity="0.5"/><circle cx="900" cy="400" r="120" fill="%23ffebe0" opacity="0.5"/><circle cx="1100" cy="100" r="60" fill="%23ffebe0" opacity="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #ff7e29;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: #fff5f0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff7e29;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #ff7e29, #ff9f5a);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+
+        /* Giới thiệu Section */
+        #gioi-thieu {
+            background: white;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .intro-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 126, 41, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .intro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 126, 41, 0.2);
+            border-color: #ff7e29;
+        }
+
+        .intro-card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .intro-card h3 {
+            color: #ff7e29;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .intro-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Câu lạc bộ Section */
+        #cau-lac-bo {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+        }
+
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .club-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .club-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 126, 41, 0.25);
+        }
+
+        .club-image {
+            height: 200px;
+            background: linear-gradient(135deg, #ff7e29 0%, #ff9f5a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: all 0.3s ease;
+        }
+
+        .club-card:hover .club-image {
+            background: linear-gradient(135deg, #ff9f5a 0%, #ffb380 100%);
+        }
+
+        .club-content {
+            padding: 25px;
+        }
+
+        .club-content h3 {
+            color: #ff7e29;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .club-content p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .club-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .club-members {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .join-button {
+            padding: 8px 20px;
+            background: #ff7e29;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .join-button:hover {
+            background: #ff6610;
+            transform: scale(1.05);
+        }
+
+        /* Liên hệ Section */
+        #lien-he {
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #ff7e29 0%, #ff9f5a 100%);
+            padding: 40px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 126, 41, 0.3);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff7e29;
+            box-shadow: 0 0 0 3px rgba(255, 126, 41, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #ff7e29 0%, #ff9f5a 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 126, 41, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 126, 41, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #ff7e29;
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-content,
+            .clubs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">🎓</div>
+                <div class="slogan">Học sáng tạo – Sống tử tế</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#gioi-thieu">Giới thiệu</a></li>
+                    <li><a href="#cau-lac-bo">Câu lạc bộ</a></li>
+                    <li><a href="#lien-he">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Chào mừng đến với Trường THPT</h1>
+            <p>Nơi khơi nguồn sáng tạo và nuôi dưỡng nhân cách</p>
+            <a href="#gioi-thieu" class="cta-button">Khám phá ngay</a>
+        </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section id="gioi-thieu">
+        <div class="container">
+            <h2 class="section-title">Giới thiệu</h2>
+            <p class="section-subtitle">Môi trường học tập hiện đại, phát triển toàn diện</p>
+            
+            <div class="intro-content">
+                <div class="intro-card">
+                    <span class="intro-card-icon">🎯</span>
+                    <h3>Tầm nhìn</h3>
+                    <p>Xây dựng thế hệ trẻ sáng tạo, tự tin và có trách nhiệm với cộng đồng. Chúng tôi tin rằng mỗi học sinh đều có tiềm năng riêng biệt cần được phát triển.</p>
+                </div>
+                
+                <div class="intro-card">
+                    <span class="intro-card-icon">📚</span>
+                    <h3>Chương trình học</h3>
+                    <p>Chương trình giáo dục tiên tiến kết hợp với phương pháp dạy học tích cực. Trang thiết bị hiện đại, phòng học thông minh hỗ trợ tối đa quá trình học tập.</p>
+                </div>
+                
+                <div class="intro-card">
+                    <span class="intro-card-icon">🌟</span>
+                    <h3>Giá trị cốt lõi</h3>
+                    <p>Sáng tạo trong học tập, tử tế trong hành động. Chúng tôi không chỉ đào tạo kiến thức mà còn hình thành nhân cách tốt đẹp cho học sinh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Câu lạc bộ -->
+    <section id="cau-lac-bo">
+        <div class="container">
+            <h2 class="section-title">Câu lạc bộ</h2>
+            <p class="section-subtitle">Tham gia các hoạt động ngoại khóa phong phú</p>
+            
+            <div class="clubs-grid">
+                <div class="club-card">
+                    <div class="club-image">🎨</div>
+                    <div class="club-content">
+                        <h3>CLB Nghệ thuật</h3>
+                        <p>Phát triển tài năng hội họa, nhiếp ảnh và các môn nghệ thuật tạo hình. Triển lãm hàng năm.</p>
+                        <div class="club-meta">
+                            <span class="club-members">👥 45 thành viên</span>
+                            <button class="join-button">Tham gia</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="club-card">
+                    <div class="club-image">🎵</div>
+                    <div class="club-content">
+                        <h3>CLB Âm nhạc</h3>
+                        <p>Học nhạc cụ, thanh nhạc và tham gia các buổi biểu diễn. Sân khấu là nơi tỏa sáng của bạn.</p>
+                        <div class="club-meta">
+                            <span class="club-members">👥 38 thành viên</span>
+                            <button class="join-button">Tham gia</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="club-card">
+                    <div class="club-image">⚽</div>
+                    <div class="club-content">
+                        <h3>CLB Thể thao</h3>
+                        <p>Bóng đá, bóng rổ, cầu lông và nhiều môn thể thao khác. Rèn luyện sức khỏe, tinh thần đồng đội.</p>
+                        <div class="club-meta">
+                            <span class="club-members">👥 62 thành viên</span>
+                            <button class="join-button">Tham gia</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="club-card">
+                    <div class="club-image">💻</div>
+                    <div class="club-content">
+                        <h3>CLB Công nghệ</h3>
+                        <p>Lập trình, robotics, AI và các công nghệ tiên tiến. Tham gia các cuộc thi khoa học kỹ thuật.</p>
+                        <div class="club-meta">
+                            <span class="club-members">👥 51 thành viên</span>
+                            <button class="join-button">Tham gia</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="club-card">
+                    <div class="club-image">🎭</div>
+                    <div class="club-content">
+                        <h3>CLB Kịch</h3>
+                        <p>Diễn xuất, đạo diễn và dàn dựng các vở kịch. Phát triển kỹ năng giao tiếp và tự tin.</p>
+                        <div class="club-meta">
+                            <span class="club-members">👥 33 thành viên</span>
+                            <button class="join-button">Tham gia</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="club-card">
+                    <div class="club-image">📖</div>
+                    <div class="club-content">
+                        <h3>CLB Văn học</h3>
+                        <p>Đọc sách, sáng tác và thảo luận văn học. Phát triển tư duy phản biện và khả năng viết.</p>
+                        <div class="club-meta">
+                            <span class="club-members">👥 29 thành viên</span>
+                            <button class="join-button">Tham gia</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên hệ -->
+    <section id="lien-he">
+        <div class="container">
+            <h2 class="section-title">Liên hệ</h2>
+            <p class="section-subtitle">Chúng tôi luôn sẵn sàng lắng nghe bạn</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Thông tin liên hệ</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Địa chỉ:</strong><br>
+                            123 Đường Giáo dục, Quận 1, TP.HCM
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>Điện thoại:</strong><br>
+                            (028) 1234 5678
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email:</strong><br>
+                            info@truongthpt.edu.vn
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <strong>Giờ làm việc:</strong><br>
+                            Thứ 2 - Thứ 6: 7:00 - 17:00<br>
+                            Thứ 7: 7:00 - 12:00
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" name="name" placeholder="Nhập họ tên của bạn" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" placeholder="0123 456 789">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nội dung</label>
+                            <textarea id="message" name="message" placeholder="Nhập nội dung bạn muốn gửi..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Gửi tin nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">📷</a>
+                <a href="#" class="social-icon">▶</a>
+                <a href="#" class="social-icon">in</a>
+            </div>
+            <p>&copy; 2026 Trường THPT - Học sáng tạo, Sống tử tế</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Designed with ❤️ for students</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.');
+            this.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.intro-card, .club-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
