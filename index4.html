@@ -732,7 +732,64 @@
             </div>
         </div>
     </section>
+<!--
+Bước 1: Cài đặt Visual Studio Code (VS Code)
+- Truy cập trang web chính thức của Visual Studio Code tại https://code.visualstudio.com
+- Tải xuống phiên bản phù hợp với hệ điều hành của bạn (Windows, macOS, hoặc Linux).
+- Cài đặt VS Code bằng cách chạy tệp cài đặt đã tải xuống và làm theo hướng dẫn trên màn hình.
+Bước 2: Mở tệp HTML trong VS Code
+- Mở VS Code sau khi cài đặt hoàn tất.
+- Chọn "File" > "Open File..." từ thanh menu hoặc sử dụng phím tắt (Ctrl + O trên Windows/Linux hoặc Cmd + O trên macOS).
+- Duyệt đến vị trí của tệp HTML (ví dụ: index4.html)
+- Chọn tệp và nhấn "Open" để mở nó trong VS Code.
+Bước 3: Cài đặt tiện ích mở rộng Live Server
+- Trong VS Code, nhấp vào biểu tượng Extensions ở thanh bên trái (hoặc sử dụng phím tắt Ctrl + Shift + X trên Windows/Linux hoặc Cmd + Shift + X trên macOS).
+- Tìm kiếm "Live Server" trong thanh tìm kiếm.
+- Chọn tiện ích mở rộng "Live Server" do Ritwick Dey phát triển và nhấp vào nút "Install" để cài đặt.
+Bước 4: Chạy tệp HTML với Live Server
+- Sau khi cài đặt xong, quay lại tệp HTML đã mở.
+- Nhấp chuột phải vào bất kỳ đâu trong tệp HTML và chọn "Open with Live Server" từ menu ngữ cảnh.
+- Trình duyệt web mặc định của bạn sẽ tự động mở và hiển thị trang web được tạo từ tệp HTML.
 
+-->
+<!-- 
+Hướng dẫn deploy từ Visual Studio Code lên GitHub Pages:
+Bước 1: Tải về và Cài đặt môi trường Git
+- Truy cập trang web chính thức của Git tại https://git-scm.com/
+- Tải xuống và cài đặt Git phù hợp với hệ điều hành của bạn (Windows, macOS, hoặc Linux).
+- Sau khi cài đặt, mở terminal (Command Prompt, PowerShell, hoặc Terminal trên macOS/Linux) và kiểm tra cài đặt bằng lệnh:
+  git --version
+Bước 2: Tạo kho lưu trữ (repository) trên GitHub
+- Đăng nhập vào tài khoản GitHub của bạn.
+- Nhấp vào nút "New" để tạo một kho lưu trữ mới.
+- Đặt tên cho kho lưu trữ (ví dụ: "truong-thpt-website") và chọn "Public".
+- Nhấp vào nút "Create repository".
+Bước 3: Mở dự án trong Visual Studio Code
+- Mở Visual Studio Code và mở thư mục chứa tệp HTML của bạn (File > Open Folder...).
+Bước 4: Khởi tạo Git trong dự án
+- Mở terminal tích hợp trong VS Code (View > Terminal).
+- Chạy lệnh sau để khởi tạo Git trong thư mục dự án:
+  git init
+- Thêm tất cả các tệp vào kho lưu trữ Git:
+  git add .
+- Tạo một commit đầu tiên:
+  git commit -m "Initial commit"
+Bước 5: Kết nối với kho lưu trữ GitHub
+- Thêm kho lưu trữ GitHub làm remote repository:
+  git remote add origin <URL của kho lưu trữ GitHub>
+    (Thay <URL của kho lưu trữ GitHub> bằng URL thực tế, ví dụ:
+        https://github.com/username/truong-thpt-website.git
+)
+Bước 6: Đẩy (push) mã nguồn lên GitHub
+- Đẩy mã nguồn lên nhánh chính (main hoặc master):
+  git push -u origin main
+  (Nếu nhánh chính của bạn là "master", thay "main" bằng "master".)
+Bước 7: Kích hoạt GitHub Pages
+- Truy cập trang cài đặt (Settings) của kho lưu trữ trên GitHub
+- Cuộn xuống phần "GitHub Pages".
+- Trong phần "Source", chọn nhánh chính (main hoặc master) và thư mục gốc (root).
+- Nhấp vào nút "Save".
+-->
     <!-- Footer -->
     <footer>
         <div class="footer-content">

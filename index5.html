@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Trường THPT Hương Khê - Website Chính Thức</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1e40af", // Deep Blue
+                        secondary: "#b45309", // Gold/Amber for accents
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .announcement-ticker {
+            animation: scroll-left 20s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(30, 64, 175, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-200">
+    <div class="bg-primary text-white py-2 px-4 md:px-8 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <span class="flex items-center"><i class="material-icons text-sm mr-1">phone</i> 0239.3871.xxx</span>
+            <span class="hidden md:flex items-center"><i class="material-icons text-sm mr-1">email</i>
+                thpthươngkhe@hatinh.edu.vn</span>
+        </div>
+        <div class="flex items-center space-x-3">
+            <button class="p-1 hover:bg-blue-700 rounded transition"
+                onclick="document.documentElement.classList.toggle('dark')">
+                <i class="material-icons text-lg">dark_mode</i>
+            </button>
+            <div class="flex items-center space-x-2 border-l border-blue-400 pl-3">
+                <a class="hover:text-amber-300" href="#">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+    <header
+        class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    HK
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-extrabold text-primary dark:text-blue-400 tracking-tight">THPT
+                        HƯƠNG KHÊ</h1>
+                    <p
+                        class="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-slate-500 dark:text-slate-400">
+                        Trí tuệ - Sáng tạo - Vươn xa</p>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-1">
+                <a class="px-3 py-2 text-sm font-semibold text-primary dark:text-blue-400" href="#">Trang chủ</a>
+                <div
+                    class="group relative px-3 py-2 text-sm font-medium hover:text-primary dark:hover:text-blue-400 cursor-pointer">
+                    Giới thiệu <i class="material-icons text-xs">expand_more</i>
+                    <div
+                        class="absolute top-full left-0 hidden group-hover:block w-48 bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 rounded-lg py-2">
+                        <a class="block px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700" href="#">Lịch sử thành
+                            lập</a>
+                        <a class="block px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700" href="#">Sứ mệnh - Tầm
+                            nhìn</a>
+                        <a class="block px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700" href="#">Ban giám hiệu</a>
+                        <a class="block px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-700" href="#">Cơ sở vật chất</a>
+                    </div>
+                </div>
+                <a class="px-3 py-2 text-sm font-medium hover:text-primary dark:hover:text-blue-400 transition"
+                    href="#">Đội ngũ</a>
+                <a class="px-3 py-2 text-sm font-medium hover:text-primary dark:hover:text-blue-400 transition"
+                    href="#">Học sinh</a>
+                <a class="px-3 py-2 text-sm font-medium hover:text-primary dark:hover:text-blue-400 transition"
+                    href="#">Tuyển sinh</a>
+                <a class="px-3 py-2 text-sm font-medium hover:text-primary dark:hover:text-blue-400 transition"
+                    href="#">Tin tức</a>
+                <a class="px-3 py-2 text-sm font-medium hover:text-primary dark:hover:text-blue-400 transition"
+                    href="#">Thư viện</a>
+                <a class="px-3 py-2 text-sm font-medium hover:text-primary dark:hover:text-blue-400 transition"
+                    href="#">Liên hệ</a>
+            </nav>
+            <button class="lg:hidden p-2">
+                <i class="material-icons text-3xl">menu</i>
+            </button>
+        </div>
+    </header>
+    <div class="bg-amber-50 dark:bg-amber-900/20 border-y border-amber-200 dark:border-amber-800 overflow-hidden py-2">
+        <div class="container mx-auto px-4 flex items-center">
+            <span
+                class="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase flex-shrink-0 mr-4 flex items-center">
+                <i class="material-icons text-xs mr-1">campaign</i> Thông báo khẩn
+            </span>
+            <div class="whitespace-nowrap flex-1 overflow-hidden">
+                <div class="announcement-ticker inline-block text-sm text-amber-900 dark:text-amber-200 font-medium">
+                    [MỚI] Thông báo lịch kiểm tra học kỳ 1 năm học 2023-2024   •  
+                    Lịch nghỉ học phòng chống bão số 4 áp dụng từ ngày 25/10   •  
+                    Kế hoạch tuyển sinh bổ sung lớp 10 chuyên Anh...
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hero-gradient min-h-[500px] flex items-center text-white relative">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-2xl">
+                <span class="inline-block px-4 py-1 bg-secondary text-white text-sm font-bold rounded-full mb-6">Chào
+                    mừng đến với</span>
+                <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Mái trường của ước mơ và khát vọng</h2>
+                <p class="text-lg md:text-xl opacity-90 mb-10 leading-relaxed">Hành trình hơn 50 năm xây dựng và phát
+                    triển, Trường THPT Hương Khê tự hào là cái nôi đào tạo nhân tài của vùng đất hiếu học Hà Tĩnh.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition shadow-xl">Khám
+                        phá ngay</button>
+                    <button
+                        class="bg-primary/50 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold hover:bg-primary transition">Xem
+                        video giới thiệu</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent">
+        </div>
+    </section>
+    <main class="container mx-auto px-4 -mt-12 relative z-10 pb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-12">
+                <section>
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-bold flex items-center">
+                            <span class="w-2 h-8 bg-primary mr-3 rounded-full"></span>
+                            Tin tức &amp; Sự kiện nổi bật
+                        </h3>
+                        <a class="text-primary dark:text-blue-400 font-semibold hover:underline flex items-center text-sm"
+                            href="#">Xem tất cả <i class="material-icons text-sm ml-1">arrow_forward</i></a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2 group">
+                            <div class="relative overflow-hidden rounded-2xl aspect-[16/9] mb-4 shadow-lg">
+                                <img alt="News feature"
+                                    class="object-cover w-full h-full group-hover:scale-105 transition duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUbe0CLIdZBQRpcyMbmXKmKv1C4E93cKf6Rqb3PVKK-j23wxksqxRzBx7WAoZygbe8M8KoBxxc6quEwfy9jH3LlBHUEfE-SRFdsdKgjL9P-dIH-38uQKxEwxgbrPxBLzUnVKnbfQ2q0yHdVakFBV7eotH5VtLIX7nEgpzKHlefnQpBRsJD6475QPkw0TQy27yqv-toJqxAuPEuksYLp6m_7AYNHBOlneXOXeBWny-rTSmZ134ey0sGEzNGkp5KkR1yrBA1tK7yBA" />
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                                    <span
+                                        class="bg-amber-600 text-[10px] px-2 py-1 rounded-sm uppercase font-bold mb-2 inline-block">Sự
+                                        kiện</span>
+                                    <h4 class="text-2xl font-bold mb-2">Tưng bừng Lễ khai giảng năm học mới 2023 - 2024
+                                    </h4>
+                                    <p class="text-sm opacity-80 line-clamp-2">Sáng nay, trong không khí hân hoan của cả
+                                        nước, trường THPT Hương Khê đã long trọng tổ chức lễ khai giảng...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex gap-4 group">
+                            <div class="w-32 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                                <img alt="News thumbnail"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi5thoP2En7hMUpd_JrPcsTUkrPaTqC9Hu4Fvsvp6Fv3PUD1F_eZHC6VYabMA8U_vwpM7ywPn7NLcgyGBoymodirOQ610N633qEQSIJZ82B9ObBOu5UFuwoQulbfIVxI-HNMlkgH4z5NKcI97BpUJiWpQG9oNhhM4n2fZqXFmcUCSIB_6IfNnA_dTlesy6PxBk15-SPEX5sXnjBdtIt71ggZ2en7m-3nOvf4exRpsUvqDhgPuoliWOXaQWgR4S11XHJIZLn79UmA" />
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <h5
+                                    class="font-bold text-sm mb-1 line-clamp-2 group-hover:text-primary dark:group-hover:text-blue-400 transition">
+                                    Hội thao chào mừng ngày Nhà giáo Việt Nam 20/11</h5>
+                                <span class="text-[10px] text-slate-500 flex items-center"><i
+                                        class="material-icons text-xs mr-1">schedule</i> 12/10/2023</span>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex gap-4 group">
+                            <div class="w-32 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                                <img alt="News thumbnail"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjyKF3fqkmBS8DvofzDhmi45-OeFEvasXQW9tEaBLVPVg-gArr6dyzKHFq4USTUGZ-TcJCNZpwSy4FdJxq-hAISLILkG0n_PfmQFJFQDy-7XhmuFzROVi-ZXe2QjptwgWtgVsbiq4Ugke24UnsWEBOrsC4j6_iu-_NRexE3GJFG6kR9tch37vKYNA4Cev0wBKmq-xwcPcQlsLcDtgnuDTymyH6mBV-UBTsOy98e-eL4QEfPSbFoQd3tQsjoxYxZs4hwI_-gKRJJg" />
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <h5
+                                    class="font-bold text-sm mb-1 line-clamp-2 group-hover:text-primary dark:group-hover:text-blue-400 transition">
+                                    Khen thưởng học sinh giỏi các cấp đợt 1</h5>
+                                <span class="text-[10px] text-slate-500 flex items-center"><i
+                                        class="material-icons text-xs mr-1">schedule</i> 08/10/2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-bold flex items-center">
+                            <span class="w-2 h-8 bg-amber-500 mr-3 rounded-full"></span>
+                            Hoạt động Dạy &amp; Học
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="group cursor-pointer">
+                            <div
+                                class="aspect-square rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex flex-col items-center justify-center text-center p-4 transition group-hover:bg-primary group-hover:text-white">
+                                <i class="material-icons text-4xl mb-3">science</i>
+                                <span class="text-sm font-bold">NC Khoa học</span>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div
+                                class="aspect-square rounded-2xl bg-amber-100 dark:bg-amber-900/30 flex flex-col items-center justify-center text-center p-4 transition group-hover:bg-secondary group-hover:text-white">
+                                <i class="material-icons text-4xl mb-3">auto_stories</i>
+                                <span class="text-sm font-bold">Thư viện số</span>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div
+                                class="aspect-square rounded-2xl bg-green-100 dark:bg-green-900/30 flex flex-col items-center justify-center text-center p-4 transition group-hover:bg-green-600 group-hover:text-white">
+                                <i class="material-icons text-4xl mb-3">groups</i>
+                                <span class="text-sm font-bold">CLB Ngoại ngữ</span>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div
+                                class="aspect-square rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex flex-col items-center justify-center text-center p-4 transition group-hover:bg-purple-600 group-hover:text-white">
+                                <i class="material-icons text-4xl mb-3">sports_soccer</i>
+                                <span class="text-sm font-bold">Hoạt động TDTT</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="space-y-8">
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
+                    <h4 class="text-lg font-bold mb-4 flex items-center"><i
+                            class="material-icons mr-2 text-red-500">play_circle</i> Video giới thiệu</h4>
+                    <div
+                        class="aspect-video bg-slate-200 dark:bg-slate-700 rounded-xl flex items-center justify-center relative group overflow-hidden">
+                        <img alt="Video thumbnail" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk_cFIkKmPFzmmHumZIUxvMUpsD5rFL1457YlOjCE3gDq2paO4yaCHR_k61C8jjooefSwkFg0BC8LW5MsplErxwBgEaA0701R2rswNOPFggiHozh97RIzKVrkM5p16sS0nhTyrbzdDy-Ey01MdEHynxoDSO_7Nj5tSok7vyGndN1g9J-SJdzXcketNwxpDRcuWO33Zb8SYn1vmUb2UCUtij1G8I8d772iA8oKn8Gs8z5hMESxwdUuFnHhEU0mijNWr1KCuNyZ-yg" />
+                        <div
+                            class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition">
+                            <div
+                                class="w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 cursor-pointer hover:scale-110 transition">
+                                <i class="material-icons text-white text-4xl">play_arrow</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary text-white rounded-3xl p-6 shadow-xl">
+                    <h4 class="text-lg font-bold mb-4">Góc học sinh</h4>
+                    <div class="space-y-3">
+                        <a class="flex items-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition" href="#">
+                            <i class="material-icons mr-3">calendar_today</i>
+                            <span class="text-sm font-medium">Thời khóa biểu</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition" href="#">
+                            <i class="material-icons mr-3">assignment</i>
+                            <span class="text-sm font-medium">Lịch kiểm tra - thi</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition" href="#">
+                            <i class="material-icons mr-3">description</i>
+                            <span class="text-sm font-medium">Biểu mẫu - Đơn xin phép</span>
+                        </a>
+                        <a class="flex items-center p-3 bg-white/10 hover:bg-white/20 rounded-xl transition" href="#">
+                            <i class="material-icons mr-3">school</i>
+                            <span class="text-sm font-medium">Tra cứu điểm số</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-amber-500 text-white rounded-3xl p-6 shadow-lg">
+                    <h4 class="text-lg font-bold mb-6">Thành tích nổi bật</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="text-3xl font-black mr-4">98%</div>
+                            <div class="text-xs uppercase font-bold opacity-80 leading-tight">Tỷ lệ đậu tốt nghiệp THPT
+                                2023</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-3xl font-black mr-4">12</div>
+                            <div class="text-xs uppercase font-bold opacity-80 leading-tight">Giải học sinh giỏi cấp
+                                Quốc gia</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-3xl font-black mr-4">150+</div>
+                            <div class="text-xs uppercase font-bold opacity-80 leading-tight">Giải học sinh giỏi cấp
+                                Tỉnh</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="bg-white dark:bg-slate-900 py-16 border-y border-slate-100 dark:border-slate-800">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Gương mặt tiêu biểu</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <div class="text-center group">
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full border-4 border-slate-100 dark:border-slate-800 overflow-hidden mb-4 group-hover:border-amber-400 transition-colors duration-300">
+                        <img alt="Teacher" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY6IviI0BzaxipmOASnwV0yixYEWhMAL8r8JiWpRtJSSIUv6V1oVFY-ukmSnXyIA3BXPz-MkiQjwo350OVebAFyBy2Xh0BsdaraT3WS5S7HdSV164-4EGiuGNZ0PTddQwbPD4QIz4sOictnGKLli8udBqRJrYjVjFlAWbWRfNvbNf854mwRjob2FUHyZwJkpoMbK-G3hO5vKoAPXIp2qth6Km9udozIm_Yaj9ackh_3J15pEac-7DiJvPkP5J6zLhM1JmiD8oG-Q" />
+                    </div>
+                    <h5 class="font-bold text-sm">Thầy Nguyễn Văn A</h5>
+                    <p class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Giáo viên ưu tú</p>
+                </div>
+                <div class="text-center group">
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full border-4 border-slate-100 dark:border-slate-800 overflow-hidden mb-4 group-hover:border-amber-400 transition-colors duration-300">
+                        <img alt="Student" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8zlBlIN61vTzHNGvbjWsMH_Act4Yk9MSpbazC3OguViA4wH_GZO2RWnINWO5VIJlb2H48s4pzbduOlZSKIlGRHtvbzlLlIT4mnNTjb9zrtV-b1q1iErb4eJRcyU5tVVed0JTEfwdWWwB_LQPUuyDZljTUo_we8ChCUPFxF_9D7g3OIvEsfqJnybYxvGP_MuPFLB14gOl3m3CNZEcso0Kunm1qrlbF_8N4PDUllNVY6-Nwlwf3bLIgxPMxGw20KXhWgVHCJZcqKw" />
+                    </div>
+                    <h5 class="font-bold text-sm">Em Trần Thị B</h5>
+                    <p class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Thủ khoa đầu ra 2023
+                    </p>
+                </div>
+                <div class="text-center group">
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full border-4 border-slate-100 dark:border-slate-800 overflow-hidden mb-4 group-hover:border-amber-400 transition-colors duration-300">
+                        <img alt="Teacher" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPplfPTfC2tUChuE8q7hVdY4nC0sIdu_FRd8CgamHcK9vJlu6unPx1_KJhT2GKrV-w15-drA2HZ29RLgBlUOMNDLuyUzwkZ4U5l6XWUA4PBuGEaV2CkVlr23W9KbRwBRZapwKZvjI-FcvsNTrhD3E1CJgU_SdaGOl0Zfo1OGfhtGxROZ2Ud4KV0WXekHNfl_Tn5_tbyVYSn0g67S5fqcg8n8cPNfonpMtAS4lR5cO93B2sIsrjtIYME8AwOWN_V-mxAX3gl3aRpw" />
+                    </div>
+                    <h5 class="font-bold text-sm">Thầy Lê Văn C</h5>
+                    <p class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Tổ trưởng chuyên môn
+                    </p>
+                </div>
+                <div class="hidden md:block text-center group">
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full border-4 border-slate-100 dark:border-slate-800 overflow-hidden mb-4 group-hover:border-amber-400 transition-colors duration-300">
+                        <img alt="Student" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuADw7hosYrNNiul1KYxCtw4CNIKr4hiqDeBXJWpivk8IOuguGcr8U1HSqtltL7oY52ViFJmd6umbskE6ZbGuiQkmeKznttiRjQ0JDl5ARjRvn7tEBwnKF0p3mGTNHjRHzRNN9RkVkJGN0H8euOibv-_fnc7jH_PENH9_ceDR6Yr84Oa2F5qe2qp9EgUIkQdKpm5VzsGAFtbqFVIVq-hVEjsLLGvHpA1QBoFa5CQhK1bPaX8DD61F54wMqKNvauT3ycURxaGSCZ38w" />
+                    </div>
+                    <h5 class="font-bold text-sm">Em Phạm Văn D</h5>
+                    <p class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Giải Nhì HSG Quốc gia
+                    </p>
+                </div>
+                <div class="hidden lg:block text-center group">
+                    <div
+                        class="w-32 h-32 mx-auto rounded-full border-4 border-slate-100 dark:border-slate-800 overflow-hidden mb-4 group-hover:border-amber-400 transition-colors duration-300">
+                        <img alt="Teacher" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8lH8kfUsg9tpmwUeV-jxXDHIDOHRAUxoS2PsOzIwwSbSAPduwxvbBt39VKS2gt1kXTYul7BePVBdwc4k9j-tZSjLoPJ3ccKm_Fk_byM-3XO-Vhb3VlwwnV7DWdkcpuKQze4Lf2IsYfI3znDUssDnA1tkrRTJs_9JdB_IfevMFuPjqcYRw08jJ-Sq-gDay-Lf0evjEdx3Cg4fzlO-fRgIH1xVLjPv43IIJUcJ5grnq4H8yS8n8lfk402cqU-auSafnjq2LsL7nkw" />
+                    </div>
+                    <h5 class="font-bold text-sm">Cô Hoàng Thị E</h5>
+                    <p class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">GVDG Cấp Tỉnh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary font-bold text-lg">
+                            HK</div>
+                        <h1 class="text-xl font-bold text-white tracking-tight">THPT HƯƠNG KHÊ</h1>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">Nơi hội tụ những giá trị truyền thống và tinh hoa giáo dục
+                        hiện đại. Chúng tôi cam kết mang lại môi trường học tập tốt nhất cho tương lai thế hệ trẻ.</p>
+                    <div class="flex space-x-4">
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition"
+                            href="#"><i class="material-icons text-sm">facebook</i></a>
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition"
+                            href="#"><i class="material-icons text-sm">smart_display</i></a>
+                        <a class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-400 transition"
+                            href="#"><i class="material-icons text-sm">language</i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 relative inline-block">
+                        Liên kết nhanh
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-amber-500 rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="hover:text-amber-400 transition" href="#">Thư viện học liệu</a></li>
+                        <li><a class="hover:text-amber-400 transition" href="#">Hệ thống quản lý điểm</a></li>
+                        <li><a class="hover:text-amber-400 transition" href="#">Sổ liên lạc điện tử</a></li>
+                        <li><a class="hover:text-amber-400 transition" href="#">Tuyển sinh lớp 10</a></li>
+                        <li><a class="hover:text-amber-400 transition" href="#">Văn bản pháp quy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 relative inline-block">
+                        Thông tin liên hệ
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-amber-500 rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="material-icons text-amber-500 text-lg mr-3">location_on</i>
+                            <span>Khối 10, Thị trấn Hương Khê, Huyện Hương Khê, Tỉnh Hà Tĩnh</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="material-icons text-amber-500 text-lg mr-3">call</i>
+                            <span>0239.3871.xxx</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="material-icons text-amber-500 text-lg mr-3">mail</i>
+                            <span>thpthươngkhe@hatinh.edu.vn</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 relative inline-block">
+                        Bản đồ vị trí
+                        <span class="absolute -bottom-2 left-0 w-8 h-1 bg-amber-500 rounded-full"></span>
+                    </h4>
+                    <div
+                        class="rounded-xl overflow-hidden grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                        <img alt="Map mockup" class="w-full h-32 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxpQIEXKgHrZS2Klg4Y_mUcuN6U-Ee5SPAr9EWtziOmh9R9ZBIlThSwJvm68_rV07w9DzxTixdcHFvIq8EDZjrFALRD-aZmkpnuKP5i_dVpekpgk4cRN0N_Q-4W1xyGD_wk1GUaKtI36X-wkyBC8ILcgbLK4FBSPEzvRRh5IDhjLchWyGz3yUAz4iXSIKFWCUmGN7LkGnPUSGtkn1giXnYJPVenJKGa7XWXIg1V9e9KOv59qYwlNgQxxbbPa99fGOnOHqZOf-Z_Q" />
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center text-xs opacity-60">
+                <p>© 2023 Trường Trung học Phổ thông Hương Khê. All rights reserved.</p>
+                <p class="mt-2">Thiết kế và vận hành bởi Ban truyền thông nhà trường.</p>
+            </div>
+        </div>
+    </footer>
+    <button
+        class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition active:scale-95 z-40">
+        <i class="material-icons">expand_less</i>
+    </button>
+
+</body>
+
+</html>

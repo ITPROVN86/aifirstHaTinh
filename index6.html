@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân loại Chó - Mèo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .upload-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .upload-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+        #image-container {
+            margin: 20px 0;
+        }
+        #uploaded-image {
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 10px;
+            display: none;
+        }
+        #result-container {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .dog {
+            color: #ff6b6b;
+        }
+        .cat {
+            color: #4ecdc4;
+        }
+        #probability {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .loading {
+            display: none;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐶 Phân loại Chó - Mèo 🐱</h1>
+    
+    <div class="upload-container">
+        <p>Tải lên ảnh để phân loại con vật là chó hay mèo</p>
+        <input type="file" id="file-input" accept="image/*" onchange="handleImage(event)">
+        <label for="file-input" class="upload-btn">Chọn ảnh</label>
+        
+        <div id="image-container">
+            <img id="uploaded-image" alt="Uploaded image">
+        </div>
+        
+        <div class="loading" id="loading">Đang phân tích...</div>
+        
+        <div id="result-container"></div>
+        <div id="probability"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+        const URL = "./my_model/";
+        let model;
+
+        // Load model khi trang được tải
+        async function loadModel() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            model = await tmImage.load(modelURL, metadataURL);
+            console.log("Model đã được tải thành công");
+        }
+
+        // Gọi hàm load model ngay khi trang load
+        loadModel();
+
+        async function handleImage(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const img = document.getElementById('uploaded-image');
+            const resultContainer = document.getElementById('result-container');
+            const probabilityContainer = document.getElementById('probability');
+            const loading = document.getElementById('loading');
+
+            // Hiển thị ảnh
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                img.src = e.target.result;
+                img.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+
+            // Hiển thị loading
+            loading.style.display = 'block';
+            resultContainer.innerHTML = '';
+            probabilityContainer.innerHTML = '';
+
+            // Đợi ảnh load xong
+            img.onload = async function() {
+                // Predict
+                const prediction = await model.predict(img);
+                
+                // Tìm class có xác suất cao nhất
+                let maxProb = 0;
+                let maxClass = '';
+                
+                for (let i = 0; i < prediction.length; i++) {
+                    if (prediction[i].probability > maxProb) {
+                        maxProb = prediction[i].probability;
+                        maxClass = prediction[i].className;
+                    }
+                }
+
+                // Hiển thị kết quả
+                loading.style.display = 'none';
+                
+                const isDog = maxClass.toLowerCase().includes('dog') || maxClass.toLowerCase().includes('chó');
+                const resultText = isDog ? '🐶 Đây là CON CHÓ!' : '🐱 Đây là CON MÈO!';
+                const resultClass = isDog ? 'dog' : 'cat';
+                
+                resultContainer.innerHTML = `<span class="${resultClass}">${resultText}</span>`;
+                probabilityContainer.innerHTML = `Độ chính xác: ${(maxProb * 100).toFixed(2)}%`;
+            }
+        }
+    </script>
+</body>
+</html>
